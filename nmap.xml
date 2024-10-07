@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///C:/Program Files (x86)/Nmap/nmap.xsl" type="text/xsl"?><nmaprun args="nmap -sn -PR 192.168.1.0/24" profile_name="" scanner="nmap" start="1727889082" startstr="Wed Oct  2 19:11:22 2024" version="7.95" xmloutputversion="1.04"><verbose level="0"></verbose><debugging level="0"></debugging><output type="interactive">Starting Nmap 7.95 ( https://nmap.org ) at 2024-10-02 19:11 Paris, Madrid (heure d’été)
+Nmap scan report for Bouygtel4K-272011045625611.lan (192.168.1.17)
+Host is up (0.0070s latency).
+MAC Address: EC:6C:9A:C7:31:80 (Arcadyan)
+Nmap scan report for Host-007.lan (192.168.1.21)
+Host is up (1.2s latency).
+MAC Address: 3A:B8:BC:CA:94:DB (Unknown)
+Nmap scan report for HP183B50.lan (192.168.1.66)
+Host is up (0.023s latency).
+MAC Address: 6C:02:E0:18:3B:50 (HP)
+Nmap scan report for RE305.lan (192.168.1.80)
+Host is up (0.037s latency).
+MAC Address: CC:32:E5:2B:D2:57 (TP-Link Technologies)
+Nmap scan report for Chambre.lan (192.168.1.82)
+Host is up (0.080s latency).
+MAC Address: 50:32:37:CE:92:9C (Apple)
+Nmap scan report for Host-006.lan (192.168.1.104)
+Host is up (0.068s latency).
+MAC Address: 8E:82:55:7D:E9:56 (Unknown)
+Nmap scan report for DESKTOP-TJK60S8-001.lan (192.168.1.183)
+Host is up (0.10s latency).
+MAC Address: C4:9D:ED:1E:6B:8D (Microsoft)
+Nmap scan report for bbox.lan (192.168.1.254)
+Host is up (0.0090s latency).
+MAC Address: E8:D2:FF:64:25:AC (Sagemcom Broadband SAS)
+Nmap scan report for LAPTOP-LTDOPM9E-001.lan (192.168.1.28)
+Host is up.
+Nmap done: 256 IP addresses (9 hosts up) scanned in 14.97 seconds
+</output><host comment=""><status state="up"></status><address addr="192.168.1.17" vendor="" addrtype="ipv4"></address><address addr="EC:6C:9A:C7:31:80" vendor="Arcadyan" addrtype="mac"></address><hostnames><hostname name="Bouygtel4K-272011045625611.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.21" vendor="" addrtype="ipv4"></address><address addr="3A:B8:BC:CA:94:DB" vendor="" addrtype="mac"></address><hostnames><hostname name="Host-007.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.66" vendor="" addrtype="ipv4"></address><address addr="6C:02:E0:18:3B:50" vendor="HP" addrtype="mac"></address><hostnames><hostname name="HP183B50.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.80" vendor="" addrtype="ipv4"></address><address addr="CC:32:E5:2B:D2:57" vendor="TP-Link Technologies" addrtype="mac"></address><hostnames><hostname name="RE305.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.82" vendor="" addrtype="ipv4"></address><address addr="50:32:37:CE:92:9C" vendor="Apple" addrtype="mac"></address><hostnames><hostname name="Chambre.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.104" vendor="" addrtype="ipv4"></address><address addr="8E:82:55:7D:E9:56" vendor="" addrtype="mac"></address><hostnames><hostname name="Host-006.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.183" vendor="" addrtype="ipv4"></address><address addr="C4:9D:ED:1E:6B:8D" vendor="Microsoft" addrtype="mac"></address><hostnames><hostname name="DESKTOP-TJK60S8-001.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.254" vendor="" addrtype="ipv4"></address><address addr="E8:D2:FF:64:25:AC" vendor="Sagemcom Broadband SAS" addrtype="mac"></address><hostnames><hostname name="bbox.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><host comment=""><status state="up"></status><address addr="192.168.1.28" vendor="" addrtype="ipv4"></address><hostnames><hostname name="LAPTOP-LTDOPM9E-001.lan" type="PTR"></hostname></hostnames><ports></ports><os></os><uptime seconds="" lastboot=""></uptime><tcpsequence index="" difficulty="" values=""></tcpsequence><ipidsequence class="" values=""></ipidsequence><tcptssequence class="" values=""></tcptssequence></host><runstats><finished time="1727889097" timestr="Wed Oct  2 19:11:37 2024"></finished><hosts up="9" down="247" total="256"></hosts></runstats></nmaprun>
