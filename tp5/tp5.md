@@ -213,5 +213,57 @@ subnet 10.5.1.0 netmask 255.255.255.0 {
 # B. Test avec un nouveau client
 
 # ☀️ Créez une nouvelle machine client client3.tp5.b1
+gabriel@client3:~$ sudo hostnamectl
+Static hostname: client3.tp5.b1
 
-# C. Consulter le bail DHCP
+gabriel@client3:~$ ip a
+2: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:dc:88:db brd ff:ff:ff:ff:ff:ff
+    inet 10.5.1.137/24 brd 10.5.1.255 scope global dynamic noprefixroute enp0s10
+
+gabriel@client3:~$ ping ynov.com
+PING ynov.com (104.26.11.233) 56(84) bytes of data.
+64 bytes from 104.26.11.233: icmp_seq=1 ttl=51 time=18.6 ms
+64 bytes from 104.26.11.233: icmp_seq=2 ttl=51 time=14.4 ms
+64 bytes from 104.26.11.233: icmp_seq=3 ttl=51 time=17.5 ms
+^C
+--- ynov.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 12.134/14.849/16.594/1.030 ms
+
+
+##### C. Consulter le bail DHCP
+
+[root@Gabthehost dhcpd]# cat /var/lib/dhcpd/dhcpd.leases
+# The format of this file is documented in the dhcpd.leases(5) manual page.
+# This lease file was written by isc-dhcp-4.4.2b1
+
+# authoring-byte-order entry is generated, DO NOT DELETE
+authoring-byte-order little-endian;
+
+server-duid "\000\001\000\001.\241\002\361\010\000'\302`\011";
+
+lease 10.5.1.137 {
+  starts 2 2024/10/15 20:14:03;
+  ends 3 2024/10/16 08:17:29;
+  cltt 2 2024/10/15 20:14:03;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet 08:00:27:dc:88:db;
+  uid "\001\010\000'\361\024\000";
+  client-hostname "gabriel-VirtualBox";
+}
+
+## ☀️ Confirmez qu'il s'agit bien de la bonne adresse MAC
+
+
+[root@Gabthehost dhcpd]# cat /var/lib/dhcpd/dhcpd.leases
+lease 10.5.1.137 {
+  hardware ethernet 08:00:27:dc:88:db;
+}
+
+gabriel@client3:~$ ip a
+2: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:dc:88:db brd ff:ff:ff:ff:ff:ff
+    inet 10.5.1.137/24 brd 10.5.1.255 scope global dynamic noprefixroute enp0s8
