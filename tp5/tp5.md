@@ -44,9 +44,9 @@ root@Gabthehosttt:/home/gabriel# ip a
        valid_lft forever preferred_lft forever
 
 # routeur.tp5.b1
-[root@localhost ~]$ sudo hostnamectl set-hostname Gabthehost
+[root@localhost ~]# sudo hostnamectl set-hostname Gabthehost
 
-[Gabriel@Gabthehost ~]$ ip a
+[root@Gabthehost ~]# ip a
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER,UP> mtu 1500 qdisc fq_codel state UP group deafult qlen 1000 
 link/ether 08:00:27:bf:63:e5 brd ff:ff:ff:ff:ff:ff
 inet 10.5.1.254/24 brd 10.5.1.255 scope global noprefixroute emp0s3 
