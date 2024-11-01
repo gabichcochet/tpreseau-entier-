@@ -6,6 +6,8 @@
 ## vous avez bien configuré les hostnames demandés
 
 # sur le pc
+
+```
 PS C:\Users\fabdj> ipconfig
 
 Carte Ethernet Ethernet 10 :
@@ -53,11 +55,13 @@ inet 10.5.1.254/24 brd 10.5.1.255 scope global noprefixroute emp0s3
 valid_lft forever preferred_lft forever 
 inet6 fe80::a00:27ff:febf:63e5/64 scope link
 valid_lft forever preferred_lft forever
-
+```
 
 ## tout le monde peut se ping au sein du réseau 10.5.1.0/24
 
 # client 1
+
+```
 gabriel@Gabthehostt:~$ ping 10.5.1.254
 
 PING 10.5.1.254 (10.5.1.254) 56(84) bytes of data.
@@ -82,9 +86,11 @@ PING 10.5.1.254 (10.5.1.254) 56(84) bytes of data.
 --- 10.5.1.254 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3092ms
 rtt min/avg/max/mdev = 0.019/0.043/0.064/0.016 ms
-
+```
 
 # Routeur à client1
+
+```
 [root@Gabthehost ~]#
 PING 10.5.1.254 (10.5.1.254) 56(84) bytes of data.
 64 bytes from 10.5.1.254: icmp_seq=1 ttl=64 time=0.014 ms
@@ -94,10 +100,11 @@ PING 10.5.1.254 (10.5.1.254) 56(84) bytes of data.
 --- 10.5.1.254 ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2065ms
 rtt min/avg/max/mdev = 0.014/0.022/0.035/0.009 ms
+```
 
 # PC à routeur
 
-
+```
 PS C:\Users\fabdj> ping 10.5.1.254
 
 Envoi d’une requête 'Ping'  10.5.1.254 avec 32 octets de données :
@@ -110,12 +117,14 @@ Statistiques Ping pour 10.5.1.254:
     Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
 Durée approximative des boucles en millisecondes :
     Minimum = 0ms, Maximum = 0ms, Moyenne = 0ms
+```
 
 ### Accès internet pour tous
 
 1) Accès internet routeur
 ### ☀️ Déjà, prouvez que le routeur a un accès internet
 
+```
 [root@Gabthehost ~]# ping google.com
 PING ynov.com (172.217.19.142) 56(84) bytes of data.
 64 bytes from 172.217.19.142 : icmp_seq=1 time=32 ms ttl=115
@@ -125,10 +134,12 @@ PING ynov.com (172.217.19.142) 56(84) bytes of data.
 --- google.com ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2004ms
 rtt min/avg/max/mdev = 32.444/34.283/36.320 ms
+```
 
 2) Accès internet clients
 ### Prouvez que les clients ont un accès internet
 
+```
 gabriel@Gabthehostt-VirtualBox:~$ ping www.ynov.com
 PING www.ynov.com (104.26.10.233) 56(84) bytes of data.
 64 bytes from 104.26.10.233: icmp_seq=1 ttl=51 time=15.5 ms
@@ -139,11 +150,13 @@ PING www.ynov.com (104.26.10.233) 56(84) bytes of data.
 --- www.ynov.com ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 4072ms
 rtt min/avg/max/mdev = 15.548/16.712/18.928/14.922 ms
+```
 
 ### ☀️ Montrez-moi le contenu final du fichier de configuration de l'interface réseau
 
 sur le client 1:
 
+```
 gabriel@Gabthehostt-VirtualBox:~$ cat /etc/netplan/01-netcfg.yaml
 network:
   version: 2
@@ -155,17 +168,21 @@ network:
       gateway4: 10.5.1.254
       nameservers:
         adresses: [1.1.1.1]
+```
 
 ### III. Serveur SSH
 
 ### ☀️ Sur routeur.tp5.b1, déterminer sur quel port écoute le serveur SSH
 
+```
 [root@Gabthehost ~]# sudo ss -lnpt| grep 22
 LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=707,fd=3))
 LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=707,fd=4))
+```
 
 ### ☀️ Sur routeur.tp5.b1, vérifier que ce port est bien ouvert
 
+```
 [root@Gabthehost ]# sudo firewall-cmd --list-all
 public (active)
   target: default
@@ -181,6 +198,7 @@ public (active)
   source-ports:
   icmp-blocks:
   rich rules:
+```
 
 ### IV. Serveur DHCP
 
@@ -188,8 +206,10 @@ public (active)
 
 # ☀️ Installez et configurez un serveur DHCP sur la machine routeur.tp5.b1
 
+```
 [root@Gabthehost ]# dnf -y install dhcp-server
 [root@Gabthehost dhcp]# sudo nano dhcpd.conf
+```
 
 ## Contenu du fichier "dhcpd.conf
 
@@ -205,14 +225,17 @@ subnet 10.5.1.0 netmask 255.255.255.0 {
     option routers 10.5.1.254;
 }
 
-
+```
 [root@Gabthehost dhcp]# systemctl enable --now dhcpd
 [root@Gabthehost dhcp]# firewall-cmd --add-service=dhcp
 [root@Gabthehost dhcp]# firewall-cmd --runtime-to-permanent
+```
 
 # B. Test avec un nouveau client
 
 # ☀️ Créez une nouvelle machine client client3.tp5.b1
+
+```
 gabriel@client3:~$ sudo hostnamectl
 Static hostname: client3.tp5.b1
 
@@ -230,7 +253,7 @@ PING ynov.com (104.26.11.233) 56(84) bytes of data.
 --- ynov.com ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2001ms
 rtt min/avg/max/mdev = 12.134/14.849/16.594/1.030 ms
-
+```
 
 ##### C. Consulter le bail DHCP
 
@@ -257,7 +280,7 @@ lease 10.5.1.137 {
 
 ## ☀️ Confirmez qu'il s'agit bien de la bonne adresse MAC
 
-
+```
 [root@Gabthehost dhcpd]# cat /var/lib/dhcpd/dhcpd.leases
 lease 10.5.1.137 {
   hardware ethernet 08:00:27:dc:88:db;
@@ -267,3 +290,4 @@ gabriel@client3:~$ ip a
 2: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether 08:00:27:dc:88:db brd ff:ff:ff:ff:ff:ff
     inet 10.5.1.137/24 brd 10.5.1.255 scope global dynamic noprefixroute enp0s8
+```

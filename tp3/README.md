@@ -11,6 +11,7 @@ Carte Ethernet Ethernet :
 
 ### ☀️ Affichez votre table ARP :
 
+```
 PS C:\Users\fabdj> arp -a
 
 Interface : 169.254.63.157 --- 0x8
@@ -33,6 +34,7 @@ Interface : 10.33.77.147 --- 0x18
   224.0.0.252           01-00-5e-00-00-fc     statique
   239.255.255.250       01-00-5e-7f-ff-fa     statique
   255.255.255.255       ff-ff-ff-ff-ff-ff     statique
+```
 
 ### ☀️ Déterminez l'adresse MAC de la passerelle du réseau de l'école :
 
@@ -44,6 +46,7 @@ Carte réseau sans fil Wi-Fi :
 
 ### ☀️ Supprimez la ligne qui concerne la passerelle  :
 
+```
 PS C:\WINDOWS\system32> arp -d 10.33.79.254
 PS C:\WINDOWS\system32> arp -a 
 Interface : 169.254.63.157 --- 0x8
@@ -64,9 +67,11 @@ Interface : 10.33.77.147 --- 0x18
   224.0.0.252           01-00-5e-00-00-fc     statique
   239.255.255.250       01-00-5e-7f-ff-fa     statique
   255.255.255.255       ff-ff-ff-ff-ff-ff     statique
+```
 
 ### ☀️ Prouvez que vous avez supprimé la ligne dans la table ARP :
 
+```
 PS C:\WINDOWS\system32> arp -d 10.33.79.254
 PS C:\WINDOWS\system32> arp -a
 
@@ -78,6 +83,7 @@ Interface : 169.254.63.157 --- 0x8
   224.0.0.252           01-00-5e-00-00-fc     statique
   239.255.255.250       01-00-5e-7f-ff-fa     statique
   255.255.255.255       ff-ff-ff-ff-ff-ff     statique
+```
 
 ### ☀️ Wireshark
   -arp1.pcapng
@@ -85,6 +91,7 @@ Interface : 169.254.63.157 --- 0x8
 
 ### ☀️ Déterminer
 
+```
 PS C:\WINDOWS\system32> ipconfig /all
 
 Carte réseau sans fil Wi-Fi :
@@ -101,9 +108,11 @@ Carte réseau sans fil Wi-Fi :
    Passerelle par défaut. . . . . . . . . : 192.168.180.29
    Serveur DHCP . . . . . . . . . . . . . : 192.168.180.29
    Serveurs DNS. . .  . . . . . . . . . . : 192.168.180.29
+```
 
 ### ☀️ DIY
 
+```
 PS C:\WINDOWS\system32> ipconfig /all
 
 Carte réseau sans fil Wi-Fi :
@@ -118,9 +127,11 @@ Carte réseau sans fil Wi-Fi :
    Passerelle par défaut. . . . . . . . . : 192.168.180.29
    Serveurs DNS. . .  . . . . . . . . . . : 192.168.180.29
    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
+```
 
 ### ☀️ Pingz !
 
+```
 PS C:\WINDOWS\system32> ping google.com
 
 Envoi d’une requête 'ping' sur google.com [216.58.213.78] avec 32 octets de données :
@@ -133,9 +144,11 @@ Statistiques Ping pour 216.58.213.78:
     Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
 Durée approximative des boucles en millisecondes :
     Minimum = 47ms, Maximum = 71ms, Moyenne = 60ms
+```
 
 ### ☀️ Affichez votre table ARP !
 
+```
 PS C:\WINDOWS\system32> arp -a
 
 Interface : 169.254.63.157 --- 0x8
@@ -156,6 +169,7 @@ Interface : 192.168.180.197 --- 0x18
   224.0.0.252           01-00-5e-00-00-fc     statique
   239.255.255.250       01-00-5e-7f-ff-fa     statique
   255.255.255.255       ff-ff-ff-ff-ff-ff     statique
+```
 
 ### ☀️ Capture arp2.pcap
 
