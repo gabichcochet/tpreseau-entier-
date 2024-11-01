@@ -68,7 +68,7 @@ ESTAB       0           0                         10.7.1.101:58478              
 # 🌞 Lister les ports en écoute sur la machine
 
 ```
-[root@web ~]# sudo ss -lnpt | grep 443
+[root@webb gabriel]# sudo ss -lnpt | grep 443
 LISTEN 0      511        10.7.1.11:443       0.0.0.0:*    users:(("nginx",pid=1340,fd=6),("nginx",pid=1339,fd=6))
 ```
 
